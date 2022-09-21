@@ -10,9 +10,18 @@ class  Livre(models.Model):
 
     Liste=models.ForeignKey('LivreListe', null=False, on_delete=models.CASCADE)
 
+    def __str__(self) :
+        return self.titre
+
+
+        
 class LivreListe(models.Model):
     name=models.CharField(max_length=100)
     
-    class Meta:
+    def __str__(self) :
+        return self.name
+    
+
+    """  class Meta:
         livre_name='Livre List'
-        livre_name_pluieriel='Livres Lists'
+        livre_name_pluieriel='Livres Lists'"""
